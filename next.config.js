@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
+const isProduction = process.env.NODE_ENV === 'production'
+const useBasePath = process.env.USE_BASEPATH === 'true'
+
 const nextConfig = {
-  output: 'export',
+  // Only use static export in production (GitHub Pages deployment)
+  output: isProduction ? 'export' : undefined,
   images: {
     unoptimized: true, // Required for static export
     remotePatterns: [
@@ -11,8 +15,11 @@ const nextConfig = {
     ],
   },
   trailingSlash: true,
-  basePath: '/RESUME',
-  assetPrefix: '/RESUME',
+  // Only use basePath for GitHub Pages deployment
+  ...(useBasePath && {
+    basePath: '/RESUME',
+    assetPrefix: '/RESUME',
+  }),
 }
 
 module.exports = nextConfig
