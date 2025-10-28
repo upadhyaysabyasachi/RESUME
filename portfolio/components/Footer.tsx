@@ -75,37 +75,11 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 pt-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex items-center justify-center">
             <p className="text-gray-400 text-sm flex items-center gap-2">
               © {currentYear} Sabyasachi Upadhyay. Built with <Heart className="w-4 h-4 text-red-500" /> and{' '}
               <Coffee className="w-4 h-4 text-primary-400" />
             </p>
-            <div className="flex items-center gap-4 text-sm text-gray-400">
-              <a
-                href="https://linkedin.com/in/sabyasachi-upadhyay"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-primary-400 transition-colors"
-              >
-                LinkedIn
-              </a>
-              <span>•</span>
-              <a
-                href="https://github.com/sabyasachi-upadhyay"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-primary-400 transition-colors"
-              >
-                GitHub
-              </a>
-              <span>•</span>
-              <a
-                href="mailto:sabyasachi.upadhyay4@gmail.com"
-                className="hover:text-primary-400 transition-colors"
-              >
-                Email
-              </a>
-            </div>
           </div>
         </div>
       </div>

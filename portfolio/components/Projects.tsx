@@ -108,9 +108,20 @@ const Projects = ({ projects = [] }: ProjectsProps) => {
             >
               {!project.image && (
                 <div className="h-48 bg-gradient-primary flex items-center justify-center">
-                  <div className="text-white text-6xl font-bold opacity-20">
-                    {project.title.charAt(0)}
-                  </div>
+                  {(project._id === 'personal-1' || project._id === 'personal-2') ? (
+                    <div className="relative w-32 h-32">
+                      <Image
+                        src={project._id === 'personal-1' ? '/logos/TODO-logo.png' : '/logos/WEATHER-logo.png'}
+                        alt={project.title}
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                  ) : (
+                    <div className="text-white text-6xl font-bold opacity-20">
+                      {project.title.charAt(0)}
+                    </div>
+                  )}
                 </div>
               )}
 
@@ -197,9 +208,20 @@ const Projects = ({ projects = [] }: ProjectsProps) => {
               )}
               {!project.image && (
                 <div className="h-48 bg-gradient-primary flex items-center justify-center">
-                  <div className="text-white text-6xl font-bold opacity-20">
-                    {project.title.charAt(0)}
-                  </div>
+                  {(project._id === '2' || project._id === '3') ? (
+                    <div className="relative w-32 h-32">
+                      <Image
+                        src={project._id === '2' ? '/logos/wep-logo.png' : '/logos/ndap-logo.png'}
+                        alt={project.title}
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                  ) : (
+                    <div className="text-white text-6xl font-bold opacity-20">
+                      {project.title.charAt(0)}
+                    </div>
+                  )}
                 </div>
               )}
 

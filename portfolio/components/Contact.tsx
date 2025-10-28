@@ -60,6 +60,61 @@ const Contact = () => {
   return (
     <section id="contact" className="py-24 bg-white" ref={ref}>
       <div className="container mx-auto px-6">
+        {/* Video Showcase Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="max-w-6xl mx-auto mb-20"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold font-display mb-12 text-center">
+            Beyond <span className="text-gradient">Work</span>
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Stand-up Comedy Video */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-gradient-to-br from-gray-50 to-purple-50 rounded-2xl p-6 border border-gray-100 shadow-lg"
+            >
+              <h3 className="text-2xl font-bold mb-4">🎭 Stand-up Comedy</h3>
+              <p className="text-gray-600 mb-4">Watch me perform at an open mic night!</p>
+              <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/GKWjj0H6qv8"
+                  title="Stand-up Comedy Performance"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="w-full h-full"
+                ></iframe>
+              </div>
+            </motion.div>
+
+            {/* 100x Hackathon Demo */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-6 border border-gray-100 shadow-lg"
+            >
+              <h3 className="text-2xl font-bold mb-4">🏆 100x Hackathon Winner</h3>
+              <p className="text-gray-600 mb-4">My pitch demo for the 100x hackathon</p>
+              <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
+                <iframe
+                  src="https://www.loom.com/embed/f1e198437f6d4230b7080384710718fa?sid=8c0f1e4d-0c5a-4f5f-9c2f-8f0d3e4e8f9a"
+                  frameBorder="0"
+                  allowFullScreen
+                  className="w-full h-full"
+                ></iframe>
+              </div>
+            </motion.div>
+          </div>
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}

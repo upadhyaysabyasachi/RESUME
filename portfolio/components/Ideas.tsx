@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Calendar, ArrowRight } from 'lucide-react'
+import Image from 'next/image'
 import { Blog } from '@/types'
 import { formatDate } from '@/lib/utils'
 
@@ -68,6 +69,14 @@ const Ideas = ({ blogs = [] }: IdeasProps) => {
     'personal': 'bg-orange-100 text-orange-700 border-orange-200',
   }
 
+  // The section heading for Ideas is below
+  // It's a <h2> with "Ideas & Writings"
+  // It is rendered inside a motion.div with intro/description below it
+  // See below (copied for clarity):
+  // <h2 className="text-4xl md:text-5xl font-bold font-display mb-4">
+  //   Ideas & <span className="text-gradient">Writings</span>
+  // </h2>
+
   return (
     <section id="ideas" className="py-24 bg-gradient-to-br from-gray-50 to-purple-50" ref={ref}>
       <div className="container mx-auto px-6">
@@ -77,8 +86,9 @@ const Ideas = ({ blogs = [] }: IdeasProps) => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
+          {/* Heading is here */}
           <h2 className="text-4xl md:text-5xl font-bold font-display mb-4">
-            Ideas & <span className="text-gradient">Writings</span>
+            Research and  <span className="text-gradient">Publications</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary-600 to-purple-600 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -113,9 +123,22 @@ const Ideas = ({ blogs = [] }: IdeasProps) => {
                     </div>
                   </div>
 
-                  <h3 className="text-2xl font-bold mb-3 group-hover:text-primary-600 transition-colors">
-                    {blog.title}
-                  </h3>
+                  <div className="flex items-start gap-4 mb-3">
+                    {blog._id === '2' && (
+                      <div className="flex-shrink-0">
+                        <Image
+                          src="/logos/wep-logo.png"
+                          alt="Women Entrepreneurship Platform"
+                          width={64}
+                          height={64}
+                          className="object-contain rounded-xl"
+                        />
+                      </div>
+                    )}
+                    <h3 className="text-2xl font-bold group-hover:text-primary-600 transition-colors">
+                      {blog.title}
+                    </h3>
+                  </div>
                   <p className="text-gray-600 mb-4 leading-relaxed">{blog.excerpt}</p>
 
                   {blog.tags && blog.tags.length > 0 && (
@@ -140,34 +163,6 @@ const Ideas = ({ blogs = [] }: IdeasProps) => {
             </motion.article>
           ))}
         </div>
-
-        {/* Publications Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 max-w-5xl mx-auto"
-        >
-          <h3 className="text-3xl font-bold font-display mb-8 text-center">Other Publications & Awards</h3>
-          <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-            <ul className="space-y-4">
-              <li className="flex gap-3 text-gray-700">
-                <span className="text-primary-600 mt-1">•</span>
-                <span>
-                  <strong>Semi-finalist</strong> at the BIG DATA TECH GRAND SLAM in INDIA BIG DATA WEEK 2014 organized
-                  by Unicom
-                </span>
-              </li>
-              <li className="flex gap-3 text-gray-700">
-                <span className="text-primary-600 mt-1">•</span>
-                <span>
-                  <strong>Paper Presentation:</strong> A Map Reduce Based Parallel Algorithm for Large Scale
-                  Hierarchical Classification at International Conference in Information Sciences 2014
-                </span>
-              </li>
-            </ul>
-          </div>
-        </motion.div>
       </div>
     </section>
   )
