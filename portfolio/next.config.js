@@ -11,9 +11,8 @@ const nextConfig = {
     ],
   },
   trailingSlash: true,
-  // Uncomment the following lines if deploying to a project site (username.github.io/repo-name)
-  // basePath: '/repo-name',
-  // assetPrefix: '/repo-name',
+  basePath: '/RESUME',
+  assetPrefix: '/RESUME',
 }
 
 module.exports = nextConfig
