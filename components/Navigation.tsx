@@ -22,7 +22,7 @@ const Navigation = () => {
     { name: 'About', href: '#about' },
     { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Ideas', href: '#ideas' },
+    { name: 'Publications', href: '#ideas' },
     { name: 'Contact', href: '#contact' },
   ]
 
