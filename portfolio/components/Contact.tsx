@@ -69,9 +69,9 @@ const Contact = () => {
           <h2 className="text-4xl md:text-5xl font-bold font-display mb-4">
             Let's <span className="text-gradient">Connect</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary-600 to-purple-600 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Have a project idea? Want to collaborate? Or just want to say hi? I'd love to hear from you!
+          <div className="w-24 h-1 bg-gradient-to-r from-primary-600 to-purple-600 mx-auto mb-6"></div>
+          <p className="text-xl text-gray-700 max-w-4xl mx-auto">
+            Have a project idea? Want to collaborate? Want to hire me? Or just want to say hi?
           </p>
         </motion.div>
 

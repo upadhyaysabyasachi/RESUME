@@ -83,7 +83,7 @@ const Hero = ({ rotatingHeadlines, bio }: HeroProps) => {
           >
             <h1 className="text-5xl md:text-7xl font-bold font-display mb-6">
               Hi, I'm{' '}
-              <span className="text-gradient">
+              <span className="text-gradient whitespace-nowrap">
                 Sabyasachi Upadhyay
               </span>
             </h1>

@@ -79,7 +79,7 @@ const Projects = ({ projects = [] }: ProjectsProps) => {
   const displayProjects = projects.length > 0 ? projects : defaultProjects
 
   return (
-    <section id="projects" className="py-24 bg-white" ref={ref}>
+    <section id="projects" className="pt-12 pb-24 bg-white" ref={ref}>
       <div className="container mx-auto px-6">
         {/* Personal Projects Section */}
         <motion.div

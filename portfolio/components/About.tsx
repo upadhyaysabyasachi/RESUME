@@ -28,7 +28,7 @@ const About = () => {
   ]
 
   return (
-    <section id="about" className="py-24 bg-white" ref={ref}>
+    <section id="about" className="pt-24 pb-12 bg-white" ref={ref}>
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -73,9 +73,8 @@ const About = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mb-20"
+            className="mb-0"
           >
-            <h3 className="text-3xl font-bold font-display mb-8 text-center">Core Values</h3>
             <div className="grid md:grid-cols-3 gap-8">
               {values.map((value, index) => (
                 <motion.div
